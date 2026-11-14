@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Video ejemplo · cuaderno</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;800;900&family=Shantell+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+html,body{width:540px;height:960px;overflow:hidden}
+body{background:#B88A5E;font-family:Figtree,sans-serif;position:relative}
+/* mesa de madera vista desde arriba */
+#table{position:absolute;inset:0;background:
+  repeating-linear-gradient(92deg,rgba(0,0,0,.035) 0 3px,transparent 3px 19px),
+  repeating-linear-gradient(88deg,rgba(255,255,255,.04) 0 2px,transparent 2px 37px),
+  radial-gradient(ellipse at 50% 45%,#C99B6C 0%,#A97B50 75%,#8F653F 100%)}
+#cam{position:absolute;inset:0;transform-origin:50% 48%}
+.book{position:absolute;left:50%;top:50%;width:440px;height:640px;margin:-330px 0 0 -220px;perspective:1600px}
+.page{position:absolute;inset:0;background:#FFFEFA;border-radius:4px 14px 14px 4px;
+  box-shadow:0 2px 3px rgba(0,0,0,.12),0 22px 40px -14px rgba(40,20,0,.55);
+  transform-origin:0 50%;backface-visibility:hidden;overflow:hidden}
+.page::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 31px,#DCE7F3 31px 32px);opacity:.8}
+.page::after{content:"";position:absolute;top:0;bottom:0;left:46px;width:1.5px;background:#F2B8B8}
+.page svg{position:absolute;inset:0;width:100%;height:100%}
+.cover{background:#2F5D8C}
+.kraft{background:#C99E6E}.kraft::before,.kraft::after{display:none}
+.cover::before,.cover::after{display:none}
+.rings{position:absolute;left:-14px;top:24px;bottom:24px;width:30px;display:flex;flex-direction:column;justify-content:space-between;z-index:50}
+.rings i{display:block;width:30px;height:12px;border-radius:8px;border:3px solid #9AA0A6;border-left-color:#5F6368;background:transparent}
+.hand{font-family:"Shantell Sans",cursive}
+/* textos tipo TikTok */
+.ov{position:absolute;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 26px;text-align:center;z-index:100;transform-origin:50% 50%}
+.box{background:#fff;color:#111;font:800 27px/1.18 Figtree;padding:8px 14px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.box.small{font:700 19px/1.2 Figtree;background:#111;color:#fff}
+.stroke{color:#fff;font:900 30px/1.12 Figtree;text-shadow:-2px -2px 0 #111,2px -2px 0 #111,-2px 2px 0 #111,2px 2px 0 #111,0 3px 0 #111,0 0 10px rgba(0,0,0,.35)}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.chip{font:800 21px Figtree;padding:7px 13px;border-radius:999px;color:#111;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.chip b{font-weight:900}
+.chip span{font-weight:600;opacity:.75}
+.tag{position:absolute;right:12px;bottom:14px;z-index:120;font:700 11px Figtree;letter-spacing:.06em;color:#fff;background:rgba(0,0,0,.45);padding:4px 8px;border-radius:6px}
+.ui{position:absolute;right:10px;bottom:150px;z-index:110;display:flex;flex-direction:column;gap:18px;align-items:center;opacity:.92}
+.ui div{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center}
+.ui svg{width:24px;height:24px}
+.ui small{font:700 11px Figtree;color:#fff;margin-top:-12px;text-shadow:0 1px 2px #000}
+.caption{position:absolute;left:14px;right:70px;bottom:44px;z-index:110;color:#fff;font:600 14px/1.3 Figtree;text-shadow:0 1px 3px rgba(0,0,0,.7)}
+.caption b{font-weight:800;display:block;margin-bottom:3px}
+</style>
+</head>
+<body>
+<div id="table"></div>
+<div id="cam">
+ <div class="book" id="book">
+  <!-- Las páginas se apilan; la de arriba se voltea -->
+  <!-- 5: Santa con huella -->
+  <div class="page kraft" id="p5"><svg viewBox="0 0 440 640">
+    <text x="70" y="78" class="hand" font-size="34" fill="#C62828" font-weight="700">Merry Christmas!</text>
+    <g transform="translate(225 345)">
+      <path d="M-70 40 C-78 -5,-60 -40,-20 -48 L30 -48 C68 -40,80 -2,72 40 C66 70,40 86,0 88 C-40 86,-66 70,-70 40Z" fill="#fff" stroke="#E7E3DA" stroke-width="2"/>
+      <path d="M-70 60 q-30 50 -26 110 q2 16 16 12 q14-4 12-22 q-2-50 14-92Z" fill="#fff" stroke="#E7E3DA" stroke-width="2"/>
+      <path d="M-34 80 q-14 60 -6 120 q4 14 16 10 q12-4 10-20 q-6-56 4-104Z" fill="#fff" stroke="#E7E3DA" stroke-width="2"/>
+      <path d="M8 84 q-2 60 10 116 q4 14 16 9 q11-5 8-20 q-10-52 -10-102Z" fill="#fff" stroke="#E7E3DA" stroke-width="2"/>
+      <path d="M44 72 q16 50 34 98 q6 13 17 7 q10-6 5-20 q-18-46 -30-88Z" fill="#fff" stroke="#E7E3DA" stroke-width="2"/>
+      <ellipse cx="0" cy="2" rx="40" ry="32" fill="#F2C9A6"/>
+      <circle cx="-14" cy="-4" r="4.5" fill="#222"/><circle cx="14" cy="-4" r="4.5" fill="#222"/>
+      <ellipse cx="0" cy="10" rx="8" ry="6" fill="#F08A8A"/>
+      <path d="M-62 -40 C-40 -120,40 -128,90 -84 C110 -66,118 -40,122 -20 L60 -40Z" fill="#D32F2F"/>
+      <path d="M-70 -44 q70 -26 140 -2 q6 18 -4 28 q-66 -20 -132 0 q-12 -10 -4 -26Z" fill="#fff"/>
+      <circle cx="124" cy="-18" r="20" fill="#FFFDF4" stroke="#EEE6D3" stroke-width="2"/>
+    </g>
+    <text x="300" y="610" class="hand" font-size="22" fill="#fff">T. '26</text>
+  </svg></div>
+  <!-- 4: contar -->
+  <div class="page" id="p4"><svg viewBox="0 0 440 640">
+    <text x="70" y="80" class="hand" font-size="40" fill="#2E7D32" font-weight="700">Count!</text>
+    <g class="hand" font-size="54" font-weight="700" fill="#333">
+      <text x="72" y="190">1</text><text x="72" y="300">2</text><text x="72" y="410">3</text><text x="72" y="520">4</text>
+    </g>
+    <defs><radialGradient id="pom" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+    <g>
+      <circle cx="170" cy="172" r="24" fill="#E53935"/><circle cx="170" cy="172" r="24" fill="url(#pom)"/>
+      <circle cx="170" cy="282" r="24" fill="#1E88E5"/><circle cx="170" cy="282" r="24" fill="url(#pom)"/>
+      <circle cx="232" cy="286" r="24" fill="#1E88E5"/><circle cx="232" cy="286" r="24" fill="url(#pom)"/>
+      <circle cx="170" cy="392" r="24" fill="#FDD835"/><circle cx="170" cy="392" r="24" fill="url(#pom)"/>
+      <circle cx="232" cy="396" r="24" fill="#FDD835"/><circle cx="232" cy="396" r="24" fill="url(#pom)"/>
+      <circle cx="294" cy="390" r="24" fill="#FDD835"/><circle cx="294" cy="390" r="24" fill="url(#pom)"/>
+      <circle cx="170" cy="502" r="24" fill="#43A047"/><circle cx="170" cy="502" r="24" fill="url(#pom)"/>
+      <circle cx="232" cy="506" r="24" fill="#43A047"/><circle cx="232" cy="506" r="24" fill="url(#pom)"/>
+      <circle cx="294" cy="500" r="24" fill="#43A047"/><circle cx="294" cy="500" r="24" fill="url(#pom)"/>
+      <circle cx="356" cy="508" r="24" fill="#43A047"/><circle cx="356" cy="508" r="24" fill="url(#pom)"/>
+    </g>
+  </svg></div>
+  <!-- 3: letra A -->
+  <div class="page" id="p3"><svg viewBox="0 0 440 640">
+    <path d="M110 520 L220 130 L330 520 M150 390 L290 390" stroke="#222" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <g id="dotsA"></g>
+    <g transform="translate(345 175)">
+      <path d="M0 20 C-34 -6,-62 30,-46 70 C-34 98,-12 104,0 94 C12 104,34 98,46 70 C62 30,34 -6,0 20Z" fill="#E53935" stroke="#B71C1C" stroke-width="3"/>
+      <path d="M0 22 q-2 -18 8 -30" stroke="#5D4037" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M8 -6 q20 -14 30 0 q-16 10 -30 0Z" fill="#43A047"/>
+    </g>
+    <text x="70" y="80" class="hand" font-size="38" fill="#333" font-weight="700">A is for apple</text>
+  </svg></div>
+  <!-- 2: formas -->
+  <div class="page" id="p2"><svg viewBox="0 0 440 640">
+    <text x="70" y="80" class="hand" font-size="40" fill="#1565C0" font-weight="700">Shapes</text>
+    <circle cx="160" cy="210" r="76" fill="none" stroke="#222" stroke-width="5" stroke-dasharray="2 0"/>
+    <g fill="#E53935"><path d="M110 180 l40-20 18 30 -36 16z"/><path d="M160 170 l40 6 -6 36 -38-6z"/><path d="M118 230 l38 -10 10 34 -40 8z"/><path d="M168 226 l36 4 -8 40 -32-10z"/></g>
+    <rect x="250" y="150" width="130" height="130" fill="none" stroke="#222" stroke-width="5" transform="rotate(2 315 215)"/>
+    <g fill="#1E88E5"><path d="M260 162 l52 4 -4 48 -48 -6z"/><path d="M318 160 l54 8 -6 50 -46 -6z"/><path d="M262 218 l48 4 -2 52 -46 -4z"/><path d="M316 222 l52 2 -2 50 -50 -2z"/></g>
+    <path d="M220 330 L330 520 L110 520 Z" fill="none" stroke="#222" stroke-width="5" stroke-linejoin="round"/>
+    <g fill="#FBC02D"><path d="M206 370 l34 -6 10 40 -42 6z"/><path d="M168 430 l44 -4 6 50 -50 4z"/><path d="M226 426 l42 6 -2 52 -46 -4z"/><path d="M146 470 l22 30 -40 6z"/><path d="M276 470 l30 34 -40 4z"/></g>
+  </svg></div>
+  <!-- 1: colores -->
+  <div class="page" id="p1"><svg viewBox="0 0 440 640">
+    <text x="70" y="80" class="hand" font-size="40" fill="#C62828" font-weight="700">Colors</text>
+    <path d="M140 210 m-78 0 a78 72 0 1 0 156 4 a78 72 0 1 0 -156 -4" fill="none" stroke="#E53935" stroke-width="7" stroke-linecap="round"/>
+    <path d="M310 310 m-74 0 a74 70 0 1 0 148 -4 a74 70 0 1 0 -148 4" fill="none" stroke="#1E88E5" stroke-width="7" stroke-linecap="round"/>
+    <path d="M160 470 m-80 0 a80 72 0 1 0 160 2 a80 72 0 1 0 -160 -2" fill="none" stroke="#FBC02D" stroke-width="7" stroke-linecap="round"/>
+    <g id="dots1"></g>
+  </svg></div>
+  <!-- portada -->
+  <div class="page cover" id="p0"><svg viewBox="0 0 440 640">
+    <rect x="70" y="200" width="320" height="170" rx="10" fill="#FFFEFA" transform="rotate(-2 230 285)"/>
+    <text x="230" y="270" text-anchor="middle" class="hand" font-size="38" font-weight="700" fill="#222" transform="rotate(-2 230 285)">My English</text>
+    <text x="230" y="325" text-anchor="middle" class="hand" font-size="38" font-weight="700" fill="#222" transform="rotate(-2 230 285)">notebook</text>
+    <circle cx="350" cy="470" r="34" fill="#FBC02D"/><circle cx="110" cy="520" r="26" fill="#E53935"/><circle cx="300" cy="560" r="20" fill="#43A047"/>
+    <path d="M92 448 l12 26 28 4 -20 20 5 28 -25 -13 -25 13 5 -28 -20 -20 28 -4z" fill="#fff"/>
+  </svg></div>
+  <div class="rings"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+ </div>
+</div>
+
+<!-- capas de texto -->
+<div class="ov" id="hook" style="top:92px">
+  <div class="box">3 meses de actividades en inglés con mi niño de 2 años</div>
+  <div class="box small">(en casa solo hablamos español)</div>
+</div>
+<div class="ov" id="t1" style="top:104px"><div class="stroke">Colores · 10 min</div></div>
+<div class="ov" id="t2" style="top:104px"><div class="stroke">Formas con papel rasgado</div></div>
+<div class="ov" id="t3" style="top:104px"><div class="stroke">Su primera letra</div></div>
+<div class="ov" id="t4" style="top:104px"><div class="stroke">Contar con pompones</div></div>
+<div class="ov" id="t5" style="top:104px"><div class="stroke">Santa con su manita</div></div>
+<div class="ov" id="v1" style="bottom:176px"><div class="chips"><span class="chip" style="background:#FFCDD2"><b>red</b> <span>· rojo</span></span><span class="chip" style="background:#BBDEFB"><b>blue</b> <span>· azul</span></span><span class="chip" style="background:#FFF59D"><b>yellow</b> <span>· amarillo</span></span></div></div>
+<div class="ov" id="v2" style="bottom:176px"><div class="chips"><span class="chip"><b>circle</b> <span>· círculo</span></span><span class="chip"><b>square</b> <span>· cuadrado</span></span><span class="chip"><b>triangle</b> <span>· triángulo</span></span></div></div>
+<div class="ov" id="v3" style="bottom:176px"><div class="chips"><span class="chip"><b>A</b> <span>· a</span></span><span class="chip" style="background:#FFCDD2"><b>apple</b> <span>· manzana</span></span></div></div>
+<div class="ov" id="v4" style="bottom:176px"><div class="chips"><span class="chip"><b>one</b> <span>· uno</span></span><span class="chip"><b>two</b> <span>· dos</span></span><span class="chip"><b>three</b> <span>· tres</span></span><span class="chip"><b>four</b> <span>· cuatro</span></span></div></div>
+<div class="ov" id="v5" style="bottom:176px"><div class="chips"><span class="chip"><b>hand</b> <span>· mano</span></span><span class="chip" style="background:#FFCDD2"><b>hat</b> <span>· gorro</span></span><span class="chip"><b>white</b> <span>· blanco</span></span></div></div>
+<div class="ov" id="end" style="top:300px">
+  <div class="box" style="font-size:31px">Guárdalo para hacerlo esta semana</div>
+  <div class="box small" style="font-size:21px">¿Cuál quieres paso a paso? Te leo en comentarios</div>
+</div>
+
+<!-- interfaz simulada de TikTok -->
+<div class="ui">
+  <div><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z" fill="#fff"/></svg></div><small>4,812</small>
+  <div><svg viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z" fill="#fff"/></svg></div><small>96</small>
+  <div><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z" fill="#FFC107"/></svg></div><small>1,307</small>
+</div>
+<div class="caption"><b>@jen.y.su.toddler</b>Actividades de 10 min para aprender inglés en casa. Edad 2–4, siempre con un adulto. #actividadesparaniños #inglesparaniños #crianzabilingue</div>
+<div class="tag">EJEMPLO · páginas simuladas</div>
+
+<script>
+// dots
+(function(){
+  const ns="http://www.w3.org/2000/svg";
+  function dot(g,x,y,r,c){const e=document.createElementNS(ns,'circle');e.setAttribute('cx',x);e.setAttribute('cy',y);e.setAttribute('r',r);e.setAttribute('fill',c);g.appendChild(e)}
+  const g1=document.getElementById('dots1');
+  let s=7;const rnd=()=>{s=(s*9301+49297)%233280;return s/233280};
+  [[140,210,'#E53935'],[310,310,'#1E88E5'],[160,470,'#FBC02D']].forEach(([cx,cy,c])=>{for(let i=0;i<7;i++){const a=i/7*6.28+rnd()*.5,r=18+rnd()*34;dot(g1,cx+Math.cos(a)*r,cy+Math.sin(a)*r*.9,13,c)}});
+  dot(g1,250,180,13,'#1E88E5');dot(g1,300,470,13,'#E53935'); // un par fuera de lugar, como de verdad
+  const gA=document.getElementById('dotsA');const cols=['#E53935','#1E88E5','#FBC02D','#43A047','#FB8C00'];
+  const seg=[[110,520,220,130],[220,130,330,520],[150,390,290,390]];let k=0;
+  seg.forEach(([x1,y1,x2,y2])=>{const n=Math.round(Math.hypot(x2-x1,y2-y1)/34);for(let i=0;i<=n;i++){const t=i/n;dot(gA,x1+(x2-x1)*t+(rnd()-.5)*8,y1+(y2-y1)*t+(rnd()-.5)*8,12,cols[k++%5])}});
+})();
+
+// línea de tiempo (segundos)
+const SEG=[ // [inicio, fin] por página visible
+  [0,2.4],[2.4,4.6],[4.6,6.8],[6.8,9.0],[9.0,11.2],[11.2,15.5]];
+const FLIP=.45;
+const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+const pop=(el,t0,t)=>{const d=t-t0;if(d<0){el.style.opacity=0;return}const k=Math.min(1,d/.22);el.style.opacity=k;el.style.transform=`scale(${.85+.15*ease(k)+(k<1?0:0)})`};
+window.setTime=function(t){
+  // cámara: leve movimiento de mano
+  const cam=document.getElementById('cam');
+  cam.style.transform=`translate(${Math.sin(t*1.3)*3}px,${Math.cos(t*1.1)*3}px) rotate(${Math.sin(t*.7)*.6}deg) scale(${1.0+Math.min(t,15)*.004})`;
+  for(let i=0;i<=5;i++){
+    const p=document.getElementById('p'+i);
+    const end=SEG[i][1];
+    let a=0;
+    if(i<5&&t>=end-FLIP){a=Math.min(1,(t-(end-FLIP))/FLIP)}
+    p.style.transform=`rotateY(${-178*ease(a)}deg)`;
+    p.style.visibility=(a>=1)?'hidden':'visible';
+    p.style.zIndex=10-i;
+  }
+  const show=(id,on,t0)=>{const el=document.getElementById(id);if(!on){el.style.opacity=0;return}pop(el,t0,t)};
+  show('hook',t<SEG[0][1]-.25,0);
+  for(let i=1;i<=5;i++){
+    const [s,e]=SEG[i];const on=t>=s+.05&&t<(i===5?11.9:e-.3);
+    show('t'+i,on,s+.05);show('v'+i,on,s+.35);
+  }
+  show('end',t>=12.0,12.0);
+};
+setTime(0);
+</script>
+</body>
+</html>
